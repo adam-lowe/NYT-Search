@@ -15,3 +15,7 @@ $('#submitBtn').click(function (e) {
     });
 
 });
+
+$("#clearBttn").on("click", function(){
+    $("#articles").html("")
+})
