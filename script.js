@@ -12,7 +12,11 @@ $('#submitBtn').click(function (e) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        $('#articles').append('<div class="article"><a href="' + response.response.docs[0].web_url + '">' + response.response.docs[0].headline.main +'</a></div>');
+        var $recordNumber = $('#recordNumber').val()
+        for (let i = 0; i < $recordNumber; i++) {
+            
+            $('#articles').append('<div class="article"><a href="' + response.response.docs[i].web_url + '">' + response.response.docs[i].headline.main +'</a></div>');
+        }
     });
 
 });
